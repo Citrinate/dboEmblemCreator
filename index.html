@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<!-- This file only exists for the purpose of the live demo.  If possible, index.php should be used instead. -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Emblem Creator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body onload="init();" style="margin: 8px;">
+		<script type="text/javascript">
+		    var colors = [[158,11,15],[237,28,36],[255,70,70],[255,102,0],[255,186,0],[255,245,118],[159,220,71],[89,255,152],[75,134,9],[0,108,33],[60,186,146],[0,115,106],[1,255,255],[0,174,239],[0,84,165],[0,0,190],[133,95,168],[145,39,143],[143,35,244],[237,0,140],[158,0,92],[48,0,74],[149,149,149],[85,85,85],[140,98,58],[90,56,17],[172,66,0],[255,146,187],[128,89,113],[58,66,52],[255,255,255],[0,0,0]];
+		</script>
+
+		<!--[If IE]><b>The emblem creator does not work in Internet Explorer!</b><br><br><![endif]-->
+		<table class="emblem-creator" width="100%">
+		    <tr>
+		        <td style="vertical-align: top; padding-right: 16px;">
+		            <div class="blue-background" style="width: 186px; padding-right: 9px; margin-bottom: 8px; -moz-border-radius: 7px; border-radius: 7px; ">
+		                <div style="background: url(img/guildlogoback.png) center center; -moz-border-radius: 3px; border-radius: 3px; border: 1px solid #b3b5b5; border-top: 0px; border-bottom: 0px;  width: 157px; height: 157px; padding: 29px 0px 0px 29px;">
+		                    <div id="logodiv" style="position: relative; height: 157px; background: url() no-repeat">
+		                        <img src="img/0p_white.png" id="logo" height="128px" width="128px" style="z-index: 3; position: absolute; top: 0px; left: 0px;">
+		                        <img src="img/0p_white.png" id="border" height="128px" width="128px"  style="z-index: 2; position: absolute; top: 0px; left: 0px;">
+		                        <img src="img/0p_white.png" id="background" height="128px" width="128px"  style="z-index: 1; position: absolute; top: 0px; left: 0px;">
+		                    </div>
+		                </div>
+		            </div>
+		            <a href="" id="emblemlink" target="_blank" style="text-decoration: none; display: none;">
+		                <table width="100%">
+		                    <tr>
+		                        <td class="lightblue-button-top-left"></td>
+		                        <td class="lightblue-button-top">Emblem Link</td>
+		                        <td class="lightblue-button-top-right"></td>
+		                    </tr>
+		                    <tr>
+		                        <td class="lightblue-button-bottom-left"></td>
+		                        <td class="lightblue-button-bottom"></td>
+		                        <td class="lightblue-button-bottom-right"></td>
+		                    </tr>
+		                </table>
+		            </a>
+		            <div class="release" style="display: none;">Use the above link to share your emblem, or right click on it and select "Save as..." to save it.</div>
+		        </td>
+		        <td style="vertical-align: top;">
+		            <div class="blue-background" style="background: #374146; -moz-border-radius: 7px; border-radius: 7px;">
+		                <table width="100%">
+		                    <tr>
+		                        <td>
+		                            <div style="width: 100%; padding-bottom: 8px">
+		                                <table width="100%" height="121px;" style="padding: 4px; background: url(img/guild_emblem_selections_background.png);">
+		                                    <tr>
+		                                        <td>
+		                                            <div style="width: 368px; height: 134px; overflow: auto; padding: 4px 0px 4px 10px;">
+		                                                <img src="img/emblems_small/234.png" id=234 onclick="setlogo(234)">
+		                                                <img src="img/emblems_small/235.png" id=235 onclick="setlogo(235)">
+		                                                <img src="img/emblems_small/236.png" id=236 onclick="setlogo(236)">
+		                                                <img src="img/emblems_small/237.png" id=237 onclick="setlogo(237)">
+		                                                <img src="img/emblems_small/238.png" id=238 onclick="setlogo(238)">
+		                                                <img src="img/emblems_small/239.png" id=239 onclick="setlogo(239)">
+		                                                <img src="img/emblems_small/240.png" id=240 onclick="setlogo(240)">
+		                                                <img src="img/emblems_small/241.png" id=241 onclick="setlogo(241)">
+		                                                <img src="img/emblems_small/242.png" id=242 onclick="setlogo(242)">
+		                                                <img src="img/emblems_small/243.png" id=243 onclick="setlogo(243)">
+		                                                <img src="img/emblems_small/244.png" id=244 onclick="setlogo(244)">
+		                                                <img src="img/emblems_small/245.png" id=245 onclick="setlogo(245)">
+		                                                <img src="img/emblems_small/246.png" id=246 onclick="setlogo(246)">
+		                                                <img src="img/emblems_small/247.png" id=247 onclick="setlogo(247)">
+		                                                <img src="img/emblems_small/248.png" id=248 onclick="setlogo(248)">
+		                                                <img src="img/emblems_small/249.png" id=249 onclick="setlogo(249)">
+		                                                <img src="img/emblems_small/250.png" id=250 onclick="setlogo(250)">
+		                                                <img src="img/emblems_small/251.png" id=251 onclick="setlogo(251)">
+		                                                <img src="img/emblems_small/252.png" id=252 onclick="setlogo(252)">
+		                                                <img src="img/emblems_small/253.png" id=253 onclick="setlogo(253)">
+		                                                <img src="img/emblems_small/254.png" id=254 onclick="setlogo(254)">
+		                                                <img src="img/emblems_small/255.png" id=255 onclick="setlogo(255)">
+		                                                <img src="img/emblems_small/256.png" id=256 onclick="setlogo(256)">
+		                                                <img src="img/emblems_small/257.png" id=257 onclick="setlogo(257)">
+		                                                <img src="img/emblems_small/258.png" id=258 onclick="setlogo(258)">
+		                                                <img src="img/emblems_small/259.png" id=259 onclick="setlogo(259)">
+		                                                <img src="img/emblems_small/260.png" id=260 onclick="setlogo(260)">
+		                                                <img src="img/emblems_small/261.png" id=261 onclick="setlogo(261)">
+		                                                <img src="img/emblems_small/262.png" id=262 onclick="setlogo(262)">
+		                                                <img src="img/emblems_small/263.png" id=263 onclick="setlogo(263)">
+		                                                <img src="img/emblems_small/264.png" id=264 onclick="setlogo(264)">
+		                                                <img src="img/emblems_small/265.png" id=265 onclick="setlogo(265)">
+		                                                <img src="img/emblems_small/266.png" id=266 onclick="setlogo(266)">
+		                                                <img src="img/emblems_small/267.png" id=267 onclick="setlogo(267)">
+		                                                <img src="img/emblems_small/268.png" id=268 onclick="setlogo(268)">
+		                                                <img src="img/emblems_small/269.png" id=269 onclick="setlogo(269)">
+		                                                <img src="img/emblems_small/270.png" id=270 onclick="setlogo(270)">
+		                                                <img src="img/emblems_small/271.png" id=271 onclick="setlogo(271)">
+		                                                <img src="img/emblems_small/272.png" id=272 onclick="setlogo(272)">
+		                                                <img src="img/emblems_small/273.png" id=273 onclick="setlogo(273)">
+		                                                <img src="img/emblems_small/274.png" id=274 onclick="setlogo(274)">
+		                                                <img src="img/emblems_small/275.png" id=275 onclick="setlogo(275)">
+		                                                <img src="img/emblems_small/276.png" id=276 onclick="setlogo(276)">
+		                                                <img src="img/emblems_small/277.png" id=277 onclick="setlogo(277)">
+		                                                <img src="img/emblems_small/278.png" id=278 onclick="setlogo(278)">
+		                                                <img src="img/emblems_small/279.png" id=279 onclick="setlogo(279)">
+		                                                <img src="img/emblems_small/280.png" id=280 onclick="setlogo(280)">
+		                                                <img src="img/emblems_small/281.png" id=281 onclick="setlogo(281)">
+		                                                <img src="img/emblems_small/282.png" id=282 onclick="setlogo(282)">
+		                                                <img src="img/emblems_small/283.png" id=283 onclick="setlogo(283)">
+		                                                <img src="img/emblems_small/284.png" id=284 onclick="setlogo(284)">
+		                                                <img src="img/emblems_small/285.png" id=285 onclick="setlogo(285)">
+		                                                <img src="img/emblems_small/286.png" id=286 onclick="setlogo(286)">
+		                                                <img src="img/emblems_small/287.png" id=287 onclick="setlogo(287)">
+		                                                <img src="img/emblems_small/288.png" id=288 onclick="setlogo(288)">
+		                                                <img src="img/emblems_small/289.png" id=289 onclick="setlogo(289)">
+		                                                <img src="img/emblems_small/290.png" id=290 onclick="setlogo(290)">
+		                                                <img src="img/emblems_small/291.png" id=291 onclick="setlogo(291)">
+		                                                <img src="img/emblems_small/292.png" id=292 onclick="setlogo(292)">
+		                                                <img src="img/emblems_small/293.png" id=293 onclick="setlogo(293)">
+		                                                <img src="img/emblems_small/294.png" id=294 onclick="setlogo(294)">
+		                                                <img src="img/emblems_small/295.png" id=295 onclick="setlogo(295)">
+		                                                <img src="img/emblems_small/296.png" id=296 onclick="setlogo(296)">
+		                                                <img src="img/emblems_small/297.png" id=297 onclick="setlogo(297)">
+		                                                <img src="img/emblems_small/298.png" id=298 onclick="setlogo(298)">
+		                                                <img src="img/emblems_small/299.png" id=299 onclick="setlogo(299)">
+		                                                <img src="img/emblems_small/300.png" id=300 onclick="setlogo(300)">
+		                                                <img src="img/emblems_small/301.png" id=301 onclick="setlogo(301)">
+		                                                <img src="img/emblems_small/302.png" id=302 onclick="setlogo(302)">
+		                                                <img src="img/emblems_small/303.png" id=303 onclick="setlogo(303)">
+		                                                <img src="img/emblems_small/304.png" id=304 onclick="setlogo(304)">
+		                                                <img src="img/emblems_small/305.png" id=305 onclick="setlogo(305)">
+		                                                <img src="img/emblems_small/306.png" id=306 onclick="setlogo(306)">
+		                                                <img src="img/emblems_small/307.png" id=307 onclick="setlogo(307)">
+		                                                <img src="img/emblems_small/308.png" id=308 onclick="setlogo(308)">
+		                                                <img src="img/emblems_small/309.png" id=309 onclick="setlogo(309)">
+		                                                <img src="img/emblems_small/310.png" id=310 onclick="setlogo(310)">
+		                                                <img src="img/emblems_small/311.png" id=311 onclick="setlogo(311)">
+		                                                <img src="img/emblems_small/312.png" id=312 onclick="setlogo(312)">
+		                                                <img src="img/emblems_small/313.png" id=313 onclick="setlogo(313)">
+		                                                <img src="img/emblems_small/314.png" id=314 onclick="setlogo(314)">
+		                                                <img src="img/emblems_small/315.png" id=315 onclick="setlogo(315)">
+		                                                <img src="img/emblems_small/316.png" id=316 onclick="setlogo(316)">
+		                                                <img src="img/emblems_small/317.png" id=317 onclick="setlogo(317)">
+		                                                <img src="img/emblems_small/318.png" id=318 onclick="setlogo(318)">
+		                                                <img src="img/emblems_small/319.png" id=319 onclick="setlogo(319)">
+		                                                <img src="img/emblems_small/320.png" id=320 onclick="setlogo(320)">
+		                                                <img src="img/emblems_small/321.png" id=321 onclick="setlogo(321)">
+		                                                <img src="img/emblems_small/322.png" id=322 onclick="setlogo(322)">
+		                                                <img src="img/emblems_small/323.png" id=323 onclick="setlogo(323)">
+		                                                <img src="img/emblems_small/324.png" id=324 onclick="setlogo(324)">
+		                                                <img src="img/emblems_small/325.png" id=325 onclick="setlogo(325)">
+		                                                <img src="img/emblems_small/326.png" id=326 onclick="setlogo(326)">
+		                                                <img src="img/emblems_small/327.png" id=327 onclick="setlogo(327)">
+		                                                <img src="img/emblems_small/328.png" id=328 onclick="setlogo(328)">
+		                                                <img src="img/emblems_small/329.png" id=329 onclick="setlogo(329)">
+		                                                <img src="img/emblems_small/330.png" id=330 onclick="setlogo(330)">
+		                                                <img src="img/emblems_small/331.png" id=331 onclick="setlogo(331)">
+		                                                <img src="img/emblems_small/332.png" id=332 onclick="setlogo(332)">
+		                                                <img src="img/emblems_small/333.png" id=333 onclick="setlogo(333)">
+		                                                <img src="img/emblems_small/334.png" id=334 onclick="setlogo(334)">
+		                                                <img src="img/emblems_small/335.png" id=335 onclick="setlogo(335)">
+		                                                <img src="img/emblems_small/336.png" id=336 onclick="setlogo(336)">
+		                                                <img src="img/emblems_small/337.png" id=337 onclick="setlogo(337)">
+		                                                <img src="img/emblems_small/338.png" id=338 onclick="setlogo(338)">
+		                                                <img src="img/emblems_small/339.png" id=339 onclick="setlogo(339)">
+		                                                <img src="img/emblems_small/340.png" id=340 onclick="setlogo(340)">
+		                                                <img src="img/emblems_small/341.png" id=341 onclick="setlogo(341)">
+		                                                <img src="img/emblems_small/342.png" id=342 onclick="setlogo(342)">
+		                                                <img src="img/emblems_small/343.png" id=343 onclick="setlogo(343)">
+		                                                <img src="img/emblems_small/344.png" id=344 onclick="setlogo(344)">
+		                                                <img src="img/emblems_small/345.png" id=345 onclick="setlogo(345)">
+		                                                <img src="img/emblems_small/346.png" id=346 onclick="setlogo(346)">
+		                                                <img src="img/emblems_small/347.png" id=347 onclick="setlogo(347)">
+		                                                <img src="img/emblems_small/348.png" id=348 onclick="setlogo(348)">
+		                                                <img src="img/emblems_small/349.png" id=349 onclick="setlogo(349)">
+		                                                <img src="img/emblems_small/350.png" id=350 onclick="setlogo(350)">
+		                                                <img src="img/emblems_small/1.png" id=1 onclick="setlogo(1)">
+		                                                <img src="img/emblems_small/2.png" id=2 onclick="setlogo(2)">
+		                                                <img src="img/emblems_small/3.png" id=3 onclick="setlogo(3)">
+		                                                <img src="img/emblems_small/4.png" id=4 onclick="setlogo(4)">
+		                                                <img src="img/emblems_small/5.png" id=5 onclick="setlogo(5)">
+		                                                <img src="img/emblems_small/6.png" id=6 onclick="setlogo(6)">
+		                                                <img src="img/emblems_small/7.png" id=7 onclick="setlogo(7)">
+		                                                <img src="img/emblems_small/8.png" id=8 onclick="setlogo(8)">
+		                                                <img src="img/emblems_small/9.png" id=9 onclick="setlogo(9)">
+		                                                <img src="img/emblems_small/10.png" id=10 onclick="setlogo(10)">
+		                                                <img src="img/emblems_small/11.png" id=11 onclick="setlogo(11)">
+		                                                <img src="img/emblems_small/12.png" id=12 onclick="setlogo(12)">
+		                                                <img src="img/emblems_small/13.png" id=13 onclick="setlogo(13)">
+		                                                <img src="img/emblems_small/14.png" id=14 onclick="setlogo(14)">
+		                                                <img src="img/emblems_small/15.png" id=15 onclick="setlogo(15)">
+		                                                <img src="img/emblems_small/16.png" id=16 onclick="setlogo(16)">
+		                                                <img src="img/emblems_small/17.png" id=17 onclick="setlogo(17)">
+		                                                <img src="img/emblems_small/18.png" id=18 onclick="setlogo(18)">
+		                                                <img src="img/emblems_small/19.png" id=19 onclick="setlogo(19)">
+		                                                <img src="img/emblems_small/20.png" id=20 onclick="setlogo(20)">
+		                                                <img src="img/emblems_small/21.png" id=21 onclick="setlogo(21)">
+		                                                <img src="img/emblems_small/22.png" id=22 onclick="setlogo(22)">
+		                                                <img src="img/emblems_small/23.png" id=23 onclick="setlogo(23)">
+		                                                <img src="img/emblems_small/24.png" id=24 onclick="setlogo(24)">
+		                                                <img src="img/emblems_small/25.png" id=25 onclick="setlogo(25)">
+		                                                <img src="img/emblems_small/26.png" id=26 onclick="setlogo(26)">
+		                                                <img src="img/emblems_small/27.png" id=27 onclick="setlogo(27)">
+		                                                <img src="img/emblems_small/28.png" id=28 onclick="setlogo(28)">
+		                                                <img src="img/emblems_small/29.png" id=29 onclick="setlogo(29)">
+		                                                <img src="img/emblems_small/30.png" id=30 onclick="setlogo(30)">
+		                                                <img src="img/emblems_small/31.png" id=31 onclick="setlogo(31)">
+		                                                <img src="img/emblems_small/32.png" id=32 onclick="setlogo(32)">
+		                                                <img src="img/emblems_small/33.png" id=33 onclick="setlogo(33)">
+		                                            </div>
+		                                        </td>
+		                                    </tr>
+		                                </table>
+		                            </div>
+		                            <div style="width: 100%;">
+		                                <table cellspacing="0" cellpadding="0" width="100%" height="121px;" style="padding: 4px; background: url(img/guild_emblem_selections_background.png);">
+		                                    <tr>
+		                                        <td>
+		                                            <div style="width: 368px; height: 134px; overflow: auto; padding: 4px 0px 4px 10px;">
+		                                                <img src="img/emblems_small/34.png" id=34 onclick="setborder(34)">
+		                                                <img src="img/emblems_small/35.png" id=35 onclick="setborder(35)">
+		                                                <img src="img/emblems_small/36.png" id=36 onclick="setborder(36)">
+		                                                <img src="img/emblems_small/37.png" id=37 onclick="setborder(37)">
+		                                                <img src="img/emblems_small/38.png" id=38 onclick="setborder(38)">
+		                                                <img src="img/emblems_small/39.png" id=39 onclick="setborder(39)">
+		                                                <img src="img/emblems_small/40.png" id=40 onclick="setborder(40)">
+		                                                <img src="img/emblems_small/41.png" id=41 onclick="setborder(41)">
+		                                                <img src="img/emblems_small/42.png" id=42 onclick="setborder(42)">
+		                                                <img src="img/emblems_small/43.png" id=43 onclick="setborder(43)">
+		                                                <img src="img/emblems_small/44.png" id=44 onclick="setborder(44)">
+		                                                <img src="img/emblems_small/45.png" id=45 onclick="setborder(45)">
+		                                                <img src="img/emblems_small/46.png" id=46 onclick="setborder(46)">
+		                                                <img src="img/emblems_small/47.png" id=47 onclick="setborder(47)">
+		                                                <img src="img/emblems_small/48.png" id=48 onclick="setborder(48)">
+		                                                <img src="img/emblems_small/49.png" id=49 onclick="setborder(49)">
+		                                                <img src="img/emblems_small/50.png" id=50 onclick="setborder(50)">
+		                                                <img src="img/emblems_small/51.png" id=51 onclick="setborder(51)">
+		                                                <img src="img/emblems_small/52.png" id=52 onclick="setborder(52)">
+		                                                <img src="img/emblems_small/53.png" id=53 onclick="setborder(53)">
+		                                                <img src="img/emblems_small/54.png" id=54 onclick="setborder(54)">
+		                                                <img src="img/emblems_small/55.png" id=55 onclick="setborder(55)">
+		                                                <img src="img/emblems_small/56.png" id=56 onclick="setborder(56)">
+		                                                <img src="img/emblems_small/57.png" id=57 onclick="setborder(57)">
+		                                                <img src="img/emblems_small/58.png" id=58 onclick="setborder(58)">
+		                                                <img src="img/emblems_small/59.png" id=59 onclick="setborder(59)">
+		                                                <img src="img/emblems_small/60.png" id=60 onclick="setborder(60)">
+		                                                <img src="img/emblems_small/61.png" id=61 onclick="setborder(61)">
+		                                                <img src="img/emblems_small/62.png" id=62 onclick="setborder(62)">
+		                                                <img src="img/emblems_small/63.png" id=63 onclick="setborder(63)">
+		                                                <img src="img/emblems_small/64.png" id=64 onclick="setborder(64)">
+		                                                <img src="img/emblems_small/65.png" id=65 onclick="setborder(65)">
+		                                                <img src="img/emblems_small/66.png" id=66 onclick="setborder(66)">
+		                                                <img src="img/emblems_small/67.png" id=67 onclick="setborder(67)">
+		                                                <img src="img/emblems_small/68.png" id=68 onclick="setborder(68)">
+		                                                <img src="img/emblems_small/69.png" id=69 onclick="setborder(69)">
+		                                                <img src="img/emblems_small/70.png" id=70 onclick="setborder(70)">
+		                                                <img src="img/emblems_small/71.png" id=71 onclick="setborder(71)">
+		                                                <img src="img/emblems_small/72.png" id=72 onclick="setborder(72)">
+		                                                <img src="img/emblems_small/73.png" id=73 onclick="setborder(73)">
+		                                                <img src="img/emblems_small/74.png" id=74 onclick="setborder(74)">
+		                                                <img src="img/emblems_small/75.png" id=75 onclick="setborder(75)">
+		                                                <img src="img/emblems_small/76.png" id=76 onclick="setborder(76)">
+		                                                <img src="img/emblems_small/77.png" id=77 onclick="setborder(77)">
+		                                                <img src="img/emblems_small/78.png" id=78 onclick="setborder(78)">
+		                                                <img src="img/emblems_small/79.png" id=79 onclick="setborder(79)">
+		                                                <img src="img/emblems_small/80.png" id=80 onclick="setborder(80)">
+		                                                <img src="img/emblems_small/81.png" id=81 onclick="setborder(81)">
+		                                                <img src="img/emblems_small/82.png" id=82 onclick="setborder(82)">
+		                                                <img src="img/emblems_small/83.png" id=83 onclick="setborder(83)">
+		                                                <img src="img/emblems_small/84.png" id=84 onclick="setborder(84)">
+		                                                <img src="img/emblems_small/85.png" id=85 onclick="setborder(85)">
+		                                                <img src="img/emblems_small/86.png" id=86 onclick="setborder(86)">
+		                                                <img src="img/emblems_small/87.png" id=87 onclick="setborder(87)">
+		                                                <img src="img/emblems_small/88.png" id=88 onclick="setborder(88)">
+		                                                <img src="img/emblems_small/89.png" id=89 onclick="setborder(89)">
+		                                                <img src="img/emblems_small/90.png" id=90 onclick="setborder(90)">
+		                                                <img src="img/emblems_small/91.png" id=91 onclick="setborder(91)">
+		                                                <img src="img/emblems_small/92.png" id=92 onclick="setborder(92)">
+		                                                <img src="img/emblems_small/93.png" id=93 onclick="setborder(93)">
+		                                                <img src="img/emblems_small/94.png" id=94 onclick="setborder(94)">
+		                                                <img src="img/emblems_small/95.png" id=95 onclick="setborder(95)">
+		                                                <img src="img/emblems_small/96.png" id=96 onclick="setborder(96)">
+		                                                <img src="img/emblems_small/97.png" id=97 onclick="setborder(97)">
+		                                                <img src="img/emblems_small/98.png" id=98 onclick="setborder(98)">
+		                                                <img src="img/emblems_small/99.png" id=99 onclick="setborder(99)">
+		                                                <img src="img/emblems_small/100.png" id=100 onclick="setborder(100)">
+		                                                <img src="img/emblems_small/101.png" id=101 onclick="setborder(101)">
+		                                                <img src="img/emblems_small/102.png" id=102 onclick="setborder(102)">
+		                                                <img src="img/emblems_small/103.png" id=103 onclick="setborder(103)">
+		                                                <img src="img/emblems_small/104.png" id=104 onclick="setborder(104)">
+		                                                <img src="img/emblems_small/105.png" id=105 onclick="setborder(105)">
+		                                                <img src="img/emblems_small/106.png" id=106 onclick="setborder(106)">
+		                                                <img src="img/emblems_small/107.png" id=107 onclick="setborder(107)">
+		                                                <img src="img/emblems_small/108.png" id=108 onclick="setborder(108)">
+		                                                <img src="img/emblems_small/109.png" id=109 onclick="setborder(109)">
+		                                                <img src="img/emblems_small/110.png" id=110 onclick="setborder(110)">
+		                                                <img src="img/emblems_small/111.png" id=111 onclick="setborder(111)">
+		                                                <img src="img/emblems_small/112.png" id=112 onclick="setborder(112)">
+		                                                <img src="img/emblems_small/113.png" id=113 onclick="setborder(113)">
+		                                                <img src="img/emblems_small/114.png" id=114 onclick="setborder(114)">
+		                                                <img src="img/emblems_small/115.png" id=115 onclick="setborder(115)">
+		                                                <img src="img/emblems_small/116.png" id=116 onclick="setborder(116)">
+		                                                <img src="img/emblems_small/117.png" id=117 onclick="setborder(117)">
+		                                                <img src="img/emblems_small/118.png" id=118 onclick="setborder(118)">
+		                                                <img src="img/emblems_small/119.png" id=119 onclick="setborder(119)">
+		                                                <img src="img/emblems_small/120.png" id=120 onclick="setborder(120)">
+		                                                <img src="img/emblems_small/121.png" id=121 onclick="setborder(121)">
+		                                                <img src="img/emblems_small/122.png" id=122 onclick="setborder(122)">
+		                                                <img src="img/emblems_small/123.png" id=123 onclick="setborder(123)">
+		                                                <img src="img/emblems_small/124.png" id=124 onclick="setborder(124)">
+		                                                <img src="img/emblems_small/125.png" id=125 onclick="setborder(125)">
+		                                                <img src="img/emblems_small/126.png" id=126 onclick="setborder(126)">
+		                                                <img src="img/emblems_small/127.png" id=127 onclick="setborder(127)">
+		                                                <img src="img/emblems_small/128.png" id=128 onclick="setborder(128)">
+		                                                <img src="img/emblems_small/129.png" id=129 onclick="setborder(129)">
+		                                                <img src="img/emblems_small/130.png" id=130 onclick="setborder(130)">
+		                                                <img src="img/emblems_small/131.png" id=131 onclick="setborder(131)">
+		                                                <img src="img/emblems_small/132.png" id=132 onclick="setborder(132)">
+		                                                <img src="img/emblems_small/133.png" id=133 onclick="setborder(133)">
+		                                            </div>
+		                                        </td>
+		                                    </tr>
+		                                </table>
+		                            </div>
+		                        </td>
+		                        <td style="padding-left: 8px; vertical-align: top;">
+		                            <div style="padding-bottom: 8px">
+		                                <table width="326px" style="background: url(img/guildlogocolorback.png) bottom no-repeat;">
+		                                    <tr>
+		                                        <td style="font-size: 8pt; color: #fff; padding-bottom: 4px;">
+		                                            Symbol Color
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td height="44px" style="padding-top: 4px; padding-left: 13px;">
+		                                            <img src="img/guildlogocolor.png" usemap="#logocolor" border="0">
+		                                            <map name="logocolor">
+		                                                <area shape="rect" coords="0,0,17,17" href="javascript:setcolor(158,11,15,'logo')">
+		                                                <area shape="rect" coords="19,0,36,17" href="javascript:setcolor(237,28,36,'logo')">
+		                                                <area shape="rect" coords="38,0,55,17" href="javascript:setcolor(255,70,70,'logo')">
+		                                                <area shape="rect" coords="57,0,74,17" href="javascript:setcolor(255,102,0,'logo')">
+		                                                <area shape="rect" coords="76,0,93,17" href="javascript:setcolor(255,186,0,'logo')">
+		                                                <area shape="rect" coords="95,0,112,17" href="javascript:setcolor(255,245,118,'logo')">
+		                                                <area shape="rect" coords="114,0,131,17" href="javascript:setcolor(159,220,71,'logo')">
+		                                                <area shape="rect" coords="133,0,150,17" href="javascript:setcolor(89,255,152,'logo')">
+		                                                <area shape="rect" coords="152,0,169,17" href="javascript:setcolor(75,134,9,'logo')">
+		                                                <area shape="rect" coords="171,0,188,17" href="javascript:setcolor(0,108,33,'logo')">
+		                                                <area shape="rect" coords="190,0,207,17" href="javascript:setcolor(60,186,146,'logo')">
+		                                                <area shape="rect" coords="209,0,226,17" href="javascript:setcolor(0,115,106,'logo')">
+		                                                <area shape="rect" coords="228,0,245,17" href="javascript:setcolor(1,255,255,'logo')">
+		                                                <area shape="rect" coords="247,0,264,17" href="javascript:setcolor(0,174,239,'logo')">
+		                                                <area shape="rect" coords="266,0,283,17" href="javascript:setcolor(0,84,165,'logo')">
+		                                                <area shape="rect" coords="285,0,302,17" href="javascript:setcolor(0,0,190,'logo')">
+		                                                <area shape="rect" coords="0,19,17,36" href="javascript:setcolor(133,95,168,'logo')">
+		                                                <area shape="rect" coords="19,19,36,36" href="javascript:setcolor(145,39,143,'logo')">
+		                                                <area shape="rect" coords="38,19,55,36" href="javascript:setcolor(143,35,244,'logo')">
+		                                                <area shape="rect" coords="57,19,74,36" href="javascript:setcolor(237,0,140,'logo')">
+		                                                <area shape="rect" coords="76,19,93,36" href="javascript:setcolor(158,0,92,'logo')">
+		                                                <area shape="rect" coords="95,19,112,36" href="javascript:setcolor(48,0,74,'logo')">
+		                                                <area shape="rect" coords="114,19,131,36" href="javascript:setcolor(149,149,149,'logo')">
+		                                                <area shape="rect" coords="133,19,150,36" href="javascript:setcolor(85,85,85,'logo')">
+		                                                <area shape="rect" coords="152,19,169,36" href="javascript:setcolor(140,98,58,'logo')">
+		                                                <area shape="rect" coords="171,19,188,36" href="javascript:setcolor(90,56,17,'logo')">
+		                                                <area shape="rect" coords="190,19,207,36" href="javascript:setcolor(172,66,0,'logo')">
+		                                                <area shape="rect" coords="209,19,226,36" href="javascript:setcolor(255,146,187,'logo')">
+		                                                <area shape="rect" coords="228,19,245,36" href="javascript:setcolor(128,89,113,'logo')">
+		                                                <area shape="rect" coords="247,19,264,36" href="javascript:setcolor(58,66,52,'logo')">
+		                                                <area shape="rect" coords="266,19,283,36" href="javascript:setcolor(255,255,255,'logo')">
+		                                                <area shape="rect" coords="285,19,302,36" href="javascript:setcolor(0,0,0,'logo')">
+		                                            </map>
+		                                        </td>
+		                                    </tr>
+		                                </table>
+		                            </div>
+		                            <div style="padding-bottom: 8px">
+		                                <table width="326px" style="background: url(img/guildlogocolorback.png) bottom no-repeat;">
+		                                    <tr>
+			                                    <td style="font-size: 8pt; color: #fff; padding-bottom: 4px;">
+			                                            Border Color
+			                                    </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td height="44px" style="padding-top: 4px; padding-left: 13px;">
+		                                            <img src="img/guildlogocolor.png" usemap="#bordercolor" border="0">
+		                                            <map name="bordercolor">
+		                                                <area shape="rect" coords="0,0,17,17" href="javascript:setcolor(158,11,15,'border')">
+		                                                <area shape="rect" coords="19,0,36,17" href="javascript:setcolor(237,28,36,'border')">
+		                                                <area shape="rect" coords="38,0,55,17" href="javascript:setcolor(255,70,70,'border')">
+		                                                <area shape="rect" coords="57,0,74,17" href="javascript:setcolor(255,102,0,'border')">
+		                                                <area shape="rect" coords="76,0,93,17" href="javascript:setcolor(255,186,0,'border')">
+		                                                <area shape="rect" coords="95,0,112,17" href="javascript:setcolor(255,245,118,'border')">
+		                                                <area shape="rect" coords="114,0,131,17" href="javascript:setcolor(159,220,71,'border')">
+		                                                <area shape="rect" coords="133,0,150,17" href="javascript:setcolor(89,255,152,'border')">
+		                                                <area shape="rect" coords="152,0,169,17" href="javascript:setcolor(75,134,9,'border')">
+		                                                <area shape="rect" coords="171,0,188,17" href="javascript:setcolor(0,108,33,'border')">
+		                                                <area shape="rect" coords="190,0,207,17" href="javascript:setcolor(60,186,146,'border')">
+		                                                <area shape="rect" coords="209,0,226,17" href="javascript:setcolor(0,115,106,'border')">
+		                                                <area shape="rect" coords="228,0,245,17" href="javascript:setcolor(1,255,255,'border')">
+		                                                <area shape="rect" coords="247,0,264,17" href="javascript:setcolor(0,174,239,'border')">
+		                                                <area shape="rect" coords="266,0,283,17" href="javascript:setcolor(0,84,165,'border')">
+		                                                <area shape="rect" coords="285,0,302,17" href="javascript:setcolor(0,0,190,'border')">
+		                                                <area shape="rect" coords="0,19,17,36" href="javascript:setcolor(133,95,168,'border')">
+		                                                <area shape="rect" coords="19,19,36,36" href="javascript:setcolor(145,39,143,'border')">
+		                                                <area shape="rect" coords="38,19,55,36" href="javascript:setcolor(143,35,244,'border')">
+		                                                <area shape="rect" coords="57,19,74,36" href="javascript:setcolor(237,0,140,'border')">
+		                                                <area shape="rect" coords="76,19,93,36" href="javascript:setcolor(158,0,92,'border')">
+		                                                <area shape="rect" coords="95,19,112,36" href="javascript:setcolor(48,0,74,'border')">
+		                                                <area shape="rect" coords="114,19,131,36" href="javascript:setcolor(149,149,149,'border')">
+		                                                <area shape="rect" coords="133,19,150,36" href="javascript:setcolor(85,85,85,'border')">
+		                                                <area shape="rect" coords="152,19,169,36" href="javascript:setcolor(140,98,58,'border')">
+		                                                <area shape="rect" coords="171,19,188,36" href="javascript:setcolor(90,56,17,'border')">
+		                                                <area shape="rect" coords="190,19,207,36" href="javascript:setcolor(172,66,0,'border')">
+		                                                <area shape="rect" coords="209,19,226,36" href="javascript:setcolor(255,146,187,'border')">
+		                                                <area shape="rect" coords="228,19,245,36" href="javascript:setcolor(128,89,113,'border')">
+		                                                <area shape="rect" coords="247,19,264,36" href="javascript:setcolor(58,66,52,'border')">
+		                                                <area shape="rect" coords="266,19,283,36" href="javascript:setcolor(255,255,255,'border')">
+		                                                <area shape="rect" coords="285,19,302,36" href="javascript:setcolor(0,0,0,'border')">
+		                                            </map>
+		                                        </td>
+		                                    </tr>
+		                                </table>
+		                            </div>
+		                            <div style="padding-bottom: 8px">
+		                                <table width="326px" style="background: url(img/guildlogocolorback.png) bottom no-repeat;">
+		                                    <tr>
+		                                        <td style="font-size: 8pt; color: #fff; padding-bottom: 4px;">
+		                                            Background Color
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td height="44px" style="padding-top: 4px; padding-left: 13px;">
+		                                            <img src="img/guildlogocolor.png" usemap="#backgroundcolor" border="0">
+		                                            <map name="backgroundcolor">
+		                                                <area shape="rect" coords="0,0,17,17" href="javascript:setcolor(158,11,15,'background')">
+		                                                <area shape="rect" coords="19,0,36,17" href="javascript:setcolor(237,28,36,'background')">
+		                                                <area shape="rect" coords="38,0,55,17" href="javascript:setcolor(255,70,70,'background')">
+		                                                <area shape="rect" coords="57,0,74,17" href="javascript:setcolor(255,102,0,'background')">
+		                                                <area shape="rect" coords="76,0,93,17" href="javascript:setcolor(255,186,0,'background')">
+		                                                <area shape="rect" coords="95,0,112,17" href="javascript:setcolor(255,245,118,'background')">
+		                                                <area shape="rect" coords="114,0,131,17" href="javascript:setcolor(159,220,71,'background')">
+		                                                <area shape="rect" coords="133,0,150,17" href="javascript:setcolor(89,255,152,'background')">
+		                                                <area shape="rect" coords="152,0,169,17" href="javascript:setcolor(75,134,9,'background')">
+		                                                <area shape="rect" coords="171,0,188,17" href="javascript:setcolor(0,108,33,'background')">
+		                                                <area shape="rect" coords="190,0,207,17" href="javascript:setcolor(60,186,146,'background')">
+		                                                <area shape="rect" coords="209,0,226,17" href="javascript:setcolor(0,115,106,'background')">
+		                                                <area shape="rect" coords="228,0,245,17" href="javascript:setcolor(1,255,255,'background')">
+		                                                <area shape="rect" coords="247,0,264,17" href="javascript:setcolor(0,174,239,'background')">
+		                                                <area shape="rect" coords="266,0,283,17" href="javascript:setcolor(0,84,165,'background')">
+		                                                <area shape="rect" coords="285,0,302,17" href="javascript:setcolor(0,0,190,'background')">
+		                                                <area shape="rect" coords="0,19,17,36" href="javascript:setcolor(133,95,168,'background')">
+		                                                <area shape="rect" coords="19,19,36,36" href="javascript:setcolor(145,39,143,'background')">
+		                                                <area shape="rect" coords="38,19,55,36" href="javascript:setcolor(143,35,244,'background')">
+		                                                <area shape="rect" coords="57,19,74,36" href="javascript:setcolor(237,0,140,'background')">
+		                                                <area shape="rect" coords="76,19,93,36" href="javascript:setcolor(158,0,92,'background')">
+		                                                <area shape="rect" coords="95,19,112,36" href="javascript:setcolor(48,0,74,'background')">
+		                                                <area shape="rect" coords="114,19,131,36" href="javascript:setcolor(149,149,149,'background')">
+		                                                <area shape="rect" coords="133,19,150,36" href="javascript:setcolor(85,85,85,'background')">
+		                                                <area shape="rect" coords="152,19,169,36" href="javascript:setcolor(140,98,58,'background')">
+		                                                <area shape="rect" coords="171,19,188,36" href="javascript:setcolor(90,56,17,'background')">
+		                                                <area shape="rect" coords="190,19,207,36" href="javascript:setcolor(172,66,0,'background')">
+		                                                <area shape="rect" coords="209,19,226,36" href="javascript:setcolor(255,146,187,'background')">
+		                                                <area shape="rect" coords="228,19,245,36" href="javascript:setcolor(128,89,113,'background')">
+		                                                <area shape="rect" coords="247,19,264,36" href="javascript:setcolor(58,66,52,'background')">
+		                                                <area shape="rect" coords="266,19,283,36" href="javascript:setcolor(255,255,255,'background')">
+		                                                <area shape="rect" coords="285,19,302,36" href="javascript:setcolor(0,0,0,'background')">
+		                                            </map>
+		                                        </td>
+		                                    </tr>
+		                                </table>
+		                            </div>
+		                            <a href="javascript:randomize()" style="text-decoration: none;">
+		                                <table width="100%">
+		                                    <tr>
+		                                        <td class="lightblue-button-top-left"></td>
+		                                        <td class="lightblue-button-top">Generate a random emblem</td>
+		                                        <td class="lightblue-button-top-right"></td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td class="lightblue-button-bottom-left"></td>
+		                                        <td class="lightblue-button-bottom"></td>
+		                                        <td class="lightblue-button-bottom-right"></td>
+		                                    </tr>
+		                                </table>
+		                            </a>
+		                        </td>
+		                    </tr>
+		                </table>
+		            </div>
+		        </td>
+		    </tr>
+		</table>
+		<br>
+		<table class="titlebar">
+		    <tr>
+		        <td class="titlebar-topleft"></td>
+		        <td class="titlebar-top"></td>
+		        <td class="titlebar-topright"></td>
+		    </tr>
+		    <tr>
+		        <td class="titlebar-left"></td>
+		        <td>Kanji Guide</td>
+		        <td class="titlebar-right"></td>
+		    </tr>
+		    <tr>
+		        <td class="titlebar-bottomleft"></td>
+		        <td class="titlebar-bottom"></td>
+		        <td class="titlebar-bottomright"></td>
+		    </tr>
+		</table>
+		<div class="titlebar-text" style="padding-bottom: 3px;">
+		    Below you'll find a list of the kanji that can be used in a guild emblem, along with the kanji written in romanji, 
+		    its meaning, and who the kanji is used by in the Dragon Ball universe.  In addition, you can also click on a kanji 
+		    below to use it as the symbol for the emblem you're currently working on.
+		    <br><br>
+		    <table class="manga-table">
+		        <tr>
+		            <td class="kanji-emblem first-row">
+		                <img src="img/emblems_small/234.png" onclick="setlogo(234)">
+		            </td>
+		            <td class="first-row">
+		                &#20096; - kame<br>
+		                <i>turtle</i><br>
+		                <b>Master Roshi</b>
+		            </td>
+		            <td class="kanji-emblem first-row">
+		                <img src="img/emblems_small/235.png" onclick="setlogo(235)">
+		            </td>
+		            <td class="first-row">
+		                &#31070; - kami<br>
+		                <i>god</i><br>
+		                <b>Kami</b>
+		            </td>
+		            <td class="kanji-emblem first-row">
+		                <img src="img/emblems_small/236.png" onclick="setlogo(236)">
+		            </td>
+		            <td class="first-row">
+		                &#24735; - go<br>
+		                <i>enlightenment</i><br>
+		                <b>Goku</b>
+		            </td>
+		            <td class="kanji-emblem first-row">
+		                <img src="img/emblems_small/237.png" onclick="setlogo(237)">
+		            </td>
+		            <td class="first-row">
+		                &#40372; - tsuru<br>
+		                <i>crane</i><br>
+		                <b>Master Shen</b>
+		            </td>
+		            <td class="kanji-emblem first-row">
+		                <img src="img/emblems_small/238.png" onclick="setlogo(238)">
+		            </td>
+		            <td class="first-row last-column">
+		                &#39764; - ma<br>
+		                <i>demon</i><br>
+		                <b>King Piccolo</b>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/239.png" onclick="setlogo(239)">
+		            </td>
+		            <td>
+		                &#27578; - satsu<br>
+		                <i>kill/murder</i><br>
+		                <b>Mercenary Tao</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/240.png" onclick="setlogo(240)">
+		            </td>
+		            <td>
+		                &#27138; - raku<br>
+		                <i>happy/music</i><br>
+		                <b>Yamcha</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/241.png" onclick="setlogo(241)">
+		            </td>
+		            <td>
+		                &#22825; - ten<br>
+		                <i>heavens</i><br>
+		                <b>Tien</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/242.png" onclick="setlogo(242)">
+		            </td>
+		            <td>
+		                &#20814; - to<br>
+		                <i>rabbit</i><br>
+		                <b>Monster Carrot</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/243.png" onclick="setlogo(243)">
+		            </td>
+		            <td class="last-column">
+		                &#21892; - zen<br>
+		                <i>good</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/244.png" onclick="setlogo(244)">
+		            </td>
+		            <td>
+		                &#24746; - aku<br>
+		                <i>evil</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/245.png" onclick="setlogo(245)">
+		            </td>
+		            <td>
+		                &#32854; - hijiri<br>
+		                <i>holy/saint/master</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/246.png" onclick="setlogo(246)">
+		            </td>
+		            <td>
+		                &#40845; - ryuu<br>
+		                <i>dragon/imperial</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/247.png" onclick="setlogo(247)">
+		            </td>
+		            <td>
+		                &#25126; - sen<br>
+		                <i>war/battle</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/248.png" onclick="setlogo(248)">
+		            </td>
+		            <td class="last-column">
+		                &#38450; - bou<br>
+		                <i>defend/protect</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/249.png" onclick="setlogo(249)">
+		            </td>
+		            <td>
+		                &#36229; - chou<br>
+		                <i>transcend/super-</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/250.png" onclick="setlogo(250)">
+		            </td>
+		            <td>
+		                &#24535; - kokorozashi<br>
+		                <i>plans/hopes</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/251.png" onclick="setlogo(251)">
+		            </td>
+		            <td>
+		                &#26032; - shin<br>
+		                <i>new</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/252.png" onclick="setlogo(252)">
+		            </td>
+		            <td>
+		                &#20553; - i<br>
+		                <i>admirable/greatness</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/253.png" onclick="setlogo(253)">
+		            </td>
+		            <td class="last-column">
+		                &#27683; - ki<br>
+		                <i>spirit/energy</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/254.png" onclick="setlogo(254)">
+		            </td>
+		            <td>
+		                &#23551; - kotobuki<br>
+		                <i>longevity/life</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/255.png" onclick="setlogo(255)">
+		            </td>
+		            <td>
+		                &#29275; - gyuu<br>
+		                <i>ox</i><br>
+		                <b>Ox King</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/256.png" onclick="setlogo(256)">
+		            </td>
+		            <td>
+		                &#39135; - shoku<br>
+		                <i>to eat</i><br>
+		                <b>Yajirobe</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/257.png" onclick="setlogo(257)">
+		            </td>
+		            <td>
+		                &#38646; - rei<br>
+		                <i>nothing/zero</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/258.png" onclick="setlogo(258)">
+		            </td>
+		            <td class="last-column">
+		                &#22769; - ichi<br>
+		                <i>I/one</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/259.png" onclick="setlogo(259)">
+		            </td>
+		            <td>
+		                &#24336; - ni<br>
+		                <i>two</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/260.png" onclick="setlogo(260)">
+		            </td>
+		            <td>
+		                &#21442; - san<br>
+		                <i>three</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/261.png" onclick="setlogo(261)">
+		            </td>
+		            <td>
+		                &#30334; - hyaku<br>
+		                <i>one hundred</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/262.png" onclick="setlogo(262)">
+		            </td>
+		            <td>
+		                &#21315; - sen<br>
+		                <i>one thousand</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/263.png" onclick="setlogo(263)">
+		            </td>
+		            <td class="last-column">
+		                &#19975; - man<br>
+		                <i>ten thousand</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/264.png" onclick="setlogo(264)">
+		            </td>
+		            <td>
+		                &#20740; - oku<br>
+		                <i>hundred million</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/265.png" onclick="setlogo(265)">
+		            </td>
+		            <td>
+		                &#27494; - mu/bu<br>
+		                <i>martial arts</i><br>
+		                <b>Mutaito</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/266.png" onclick="setlogo(266)">
+		            </td>
+		            <td>
+		                &#30333; - shiro<br>
+		                <i>white</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/267.png" onclick="setlogo(267)">
+		            </td>
+		            <td>
+		                &#40658; - kuro<br>
+		                <i>black</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/268.png" onclick="setlogo(268)">
+		            </td>
+		            <td class="last-column">
+		                &#33980; - ao<br>
+		                <i>blue</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/269.png" onclick="setlogo(269)">
+		            </td>
+		            <td>
+		                &#32005; - hong<br>
+		                <i>crimson/deep red</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/270.png" onclick="setlogo(270)">
+		            </td>
+		            <td>
+		                &#40644; - ki<br>
+		                <i>yellow</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/271.png" onclick="setlogo(271)">
+		            </td>
+		            <td>
+		                &#32209; - midori<br>
+		                <i>green</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/272.png" onclick="setlogo(272)">
+		            </td>
+		            <td>
+		                &#32043; - murasaki<br>
+		                <i>purple</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/273.png" onclick="setlogo(273)">
+		            </td>
+		            <td class="last-column">
+		                &#37504; - gin<br>
+		                <i>silver</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/274.png" onclick="setlogo(274)">
+		            </td>
+		            <td>
+		                &#37329; - kin<br>
+		                <i>gold</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/275.png" onclick="setlogo(275)">
+		            </td>
+		            <td>
+		                &#20803; - moto/yuan<br>
+		                <i>beginning/origin</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/276.png" onclick="setlogo(276)">
+		            </td>
+		            <td>
+		                &#29577; - tama/yu<br>
+		                <i>jewel</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/284.png" onclick="setlogo(284)">
+		            </td>
+		            <td>
+		                &#30495; - shin<br>
+		                <i>reality/truth</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/285.png" onclick="setlogo(285)">
+		            </td>
+		            <td class="last-column">
+		                &#22855; - ki<br>
+		                <i>strange</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/286.png" onclick="setlogo(286)">
+		            </td>
+		            <td>
+		                &#29467; - mou<br>
+		                <i>fierce/wild</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/287.png" onclick="setlogo(287)">
+		            </td>
+		            <td>
+		                &#40599; - rei<br>
+		                <i>lovely</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/288.png" onclick="setlogo(288)">
+		            </td>
+		            <td>
+		                &#27005; - raku<br>
+		                <i>happy/music</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/289.png" onclick="setlogo(289)">
+		            </td>
+		            <td>
+		                &#28961; - mu<br>
+		                <i>nothingness</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/24.png" onclick="setlogo(24)">
+		            </td>
+		            <td class="last-column">
+		                &#24859; - ai<br>
+		                <i>love</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/25.png" onclick="setlogo(25)">
+		            </td>
+		            <td>
+		                &#24107; - shi<br>
+		                <i>expert/master</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/26.png" onclick="setlogo(26)">
+		            </td>
+		            <td>
+		                &#37034; - ja<br>
+		                <i>wicked/unjust</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/27.png" onclick="setlogo(27)">
+		            </td>
+		            <td>
+		                &#34382; - tora/ko<br>
+		                <i>drunkard/tiger</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/28.png" onclick="setlogo(28)">
+		            </td>
+		            <td>
+		                &#22818; - yume<br>
+		                <i>dream/illusion</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/29.png" onclick="setlogo(29)">
+		            </td>
+		            <td class="last-column">
+		                &#33775; - hana<br>
+		                <i>flower</i>
+		            </td>
+		        </tr>
+		        <tr>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/30.png" onclick="setlogo(30)">
+		            </td>
+		            <td>
+		                &#25731; - geki<br>
+		                <i>attack/defeat</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/31.png" onclick="setlogo(31)">
+		            </td>
+		            <td>
+		                &#24525; - nin<br>
+		                <i>endure</i>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/32.png" onclick="setlogo(32)">
+		            </td>
+		            <td>
+		                &#35199;&#39277; - nishimeshi<br>
+		                <i>western rice</i><br>
+		                <b>Paella</b>
+		            </td>
+		            <td class="kanji-emblem">
+		                <img src="img/emblems_small/33.png" onclick="setlogo(33)">
+		            </td>
+		            <td class="last-column" colspan="3">
+		                &#30028;&#29579; - kaiou<br>
+		                <i>king of worlds</i><br>
+		                <b>King Kai</b>
+		            </td>
+		        </tr>
+		    </table>
+		</div>
+		<script type="text/javascript" src="js/pixastic.custom.js"></script>
+        <script type="text/javascript" src="js/emblem_creator.js"></script>
+    </body>
+</html> 

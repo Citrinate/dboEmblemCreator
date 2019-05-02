@@ -1,0 +1,37 @@
+body, html { font: 10pt Arial; color: #000000; margin: 0px; padding: 0px; width: 948px; }
+body a { color: #20455a; }
+table { border-spacing: 0px; border-collapse: collapse; }
+table tr td, table tr th { padding: 0px; }
+img { border: 0px; }
+a { border: 0px; }
+.titlebar { width: 100%; background: url(../img/title_bar_background.png); color: #ffffff; font-size: 11pt; font-weight: bold; text-align: left; border-radius: 8px; }
+.titlebar a{ color: #ffffff; text-decoration: none; }
+.titlebar-subtitle { float: right; font-size: 9pt; padding-top: 3px; font-weight: normal; font-style: italic; }
+.titlebar-subtitle a{ color: #ffffff; text-decoration: none; }
+.titlebat-subtitle a:hover{ text-decoration: underline; }
+.titlebar-topleft { height: 7px; width: 7px; background: url(../img/title_bar_topleft.png); border-top-left-radius: 8px;  }
+.titlebar-top { height: 7px; background: url(../img/title_bar_top.png) repeat-x; }
+.titlebar-topright { height: 7px; width: 7px; background: url(../img/title_bar_topright.png);  border-top-right-radius: 8px;  }
+.titlebar-left { height: 7px; background: url(../img/title_bar_left.png) repeat-y; }
+.titlebar-right { height: 7px; background: url(../img/title_bar_right.png) repeat-y; }
+.titlebar-bottomleft { height: 7px; width: 7px; background: url(../img/title_bar_bottomleft.png); border-bottom-left-radius: 8px;  }
+.titlebar-bottom { height: 7px; background: url(../img/title_bar_bottom.png) repeat-x; }
+.titlebar-bottomright { height: 7px; width: 7px; background: url(../img/title_bar_bottomright.png); border-bottom-right-radius: 8px; }
+.titlebar-text { padding: 12px 4px 20px 4px; line-height: 130%; text-align: left; }
+.lightblue-button-top-left { width: 8px; background: url(../img/lightblue_button_top_left.png); }
+.lightblue-button-top { text-align: center; padding-top: 7px; color: #fff; font-size: 14pt; background: url(../img/lightblue_button_top.png) repeat; }
+.lightblue-button-top-right { width: 8px; background: url(../img/lightblue_button_top_right.png); }
+.lightblue-button-bottom-left { width: 8px; height: 9px; background: url(../img/lightblue_button_bottom_left.png); }
+.lightblue-button-bottom {  height: 9px; background: url(../img/lightblue_button_bottom.png) repeat; }
+.lightblue-button-bottom-right { width: 8px; height: 9px; background: url(../img/lightblue_button_bottom_right.png); }
+.small-button { float: left; padding-right: 8px; }
+.blue-background { padding: 7px; background: url(../img/title_bar_background.png); border: 2px solid #51555D; }
+.release { width: 100%; font-size: 8pt; color: #222; padding-top: 8px; }
+.emblem-creator img{ cursor: pointer; }
+.kanji-emblem { background: url(../img/kanji_emblem_background.png) center center no-repeat; height: 64px; width: 64px !important; padding: 0px !important; border-left: thin solid #efefef; }
+.kanji-emblem img{ cursor: pointer; }
+.manga-table { width: 100%; font-size: 10pt; }
+.manga-table td { vertical-align: top; padding: 4px 4px; border-bottom: thin solid #efefef; border-right: thin solid #efefef; border-right: 0px;  }
+.manga-title { font-size: 11pt; font-weight: bold; }
+.first-row { width: 124px; border-top: thin solid #efefef; }
+.last-column {  border-right: thin solid #efefef !important; }
